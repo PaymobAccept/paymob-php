@@ -1,1 +1,1 @@
-# paymob-next-php
+# Paymob PHP
