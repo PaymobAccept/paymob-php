@@ -2,7 +2,7 @@
 
 #Installation
 
-   `composer require paymob/paymob_next_sdk`
+   `composer require paymob`
    
    After installation run the command `composer dump-autoload` then `composer update` 
 
