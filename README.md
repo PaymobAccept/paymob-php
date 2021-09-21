@@ -2,7 +2,7 @@
 
 #Installation
 
-   `composer require paymob`
+   `composer require paymob/paymob-php`
    
    After installation run the command `composer dump-autoload` then `composer update` 
 

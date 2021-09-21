@@ -1,5 +1,5 @@
 {
-    "name": "paymob",
+    "name": "paymob/paymob-php",
     "description": "Your Paymob SDK in PHP",
     "keywords": ["paymob", "payments", "rest", "sdk", "orders", "checkout"],
     "type": "library",
