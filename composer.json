@@ -1,10 +1,9 @@
 {
     "name": "paymob/paymob_next_sdk",
-    "description": "Paymob's PHP SDK for Checkout REST APIs",
+    "description": "Your Paymob SDK in PHP",
     "keywords": ["paymob", "payments", "rest", "sdk", "orders", "checkout"],
     "type": "library",
-    "homepage": "https://paymob.com/",
-    "license": "MIT",
+    "homepage": "https://github.com/PaymobAccept/paymob-php",
     "authors": [
         {
             "name": "Paymob",
