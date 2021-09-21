@@ -1,8 +1,9 @@
 # paymob-next-php
-Documentation
- paymob_next_sdk enable to integrate with paymob methods and serveices 
+#Documentation
+
+  paymob_next_sdk enable to integrate with paymob methods and serveices 
  
-Installation
+Installation.
    composer require paymob/paymob_next_sdk 
    
 after installation run the command composer dump-autoload then composer update 
