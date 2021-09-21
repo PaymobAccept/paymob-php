@@ -14,9 +14,10 @@ How to use sdk?
   Example
     creating an intention
      Code:
+     
+     
      require '../vendor/autoload.php';
      use Paymob\Paymob;
-     
      $secret_key="your secret key in paymob account";
      $app=new Paymob($secret_key);
      $body=array(   $amount=1000,
