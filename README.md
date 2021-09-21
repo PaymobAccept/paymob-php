@@ -1,5 +1,4 @@
 # Paymob PHP
-=======
 
 #Installation
 
@@ -39,4 +38,3 @@ How to use sdk?
                     $delivery_needed=False,);
      echo $app->intent->create('',$secret_key,$body);
  
->>>>>>> 4e2c8829275141695ec61dcf385d27d5b55b1c3c
