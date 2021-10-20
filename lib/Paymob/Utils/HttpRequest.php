@@ -41,14 +41,14 @@ class HttpRequest
 		
     }
 
-    public function resource_url($cls)
+    public function resource_url()
     {
         //Resource URL
         if(empty($resource))
         {
            return "Resource class must have a resource string."; 
         }
-        return resource_to_url($cls.'->'.$resource);
+        return resource_to_url('->'.$resource);
     }
 
     public function auth_header()

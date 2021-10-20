@@ -1,14 +1,14 @@
 <?php 
 namespace Paymob\Accept;
-use Paymob\Utils\HttpOperations;
-class Customer  {
+use \Paymob\Utils\HttpOperations;
+class PaymentRefrence  {
     use HttpOperations;
-    public $resource = "customer";
+    private $resource = "PaymentRefrence";
 
     public function __construct($resource=null)
     {
         $this->resource = $resource;
+
     }
-   
     
 }

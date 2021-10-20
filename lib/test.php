@@ -2,6 +2,7 @@
 require '../vendor/autoload.php';
 use Paymob\Paymob;
 
+/*test create function */
 $secret_key="skt_a67ba5b0a9cfb19e37a685f9216ebf456ddc63aa9706d21c370571269689191b";
 $app=new Paymob($secret_key);
 $body=array(    $amount=1000,
@@ -24,3 +25,42 @@ $body=array(    $amount=1000,
                 ],
                 $delivery_needed=False,);
 echo $app->intent->create('',$secret_key,$body);
+/*test list function */
+$secret_key="skt_a67ba5b0a9cfb19e37a685f9216ebf456ddc63aa9706d21c370571269689191b";
+$app=new Paymob($secret_key);
+echo $app->intent->list('',$secret_key);
+
+/*test retrive function */
+
+$secret_key="skt_a67ba5b0a9cfb19e37a685f9216ebf456ddc63aa9706d21c370571269689191b";
+$app=new Paymob($secret_key);
+echo $app->intent->retrieve('',$secret_key);
+
+/*test void function */
+
+$secret_key="skt_a67ba5b0a9cfb19e37a685f9216ebf456ddc63aa9706d21c370571269689191b";
+$app=new Paymob($secret_key);
+$body=array(    $payment_reference="14394788",
+                );
+echo $app->payment_reference->void('',$secret_key,$body);
+
+/*test refund function */
+
+$secret_key="skt_a67ba5b0a9cfb19e37a685f9216ebf456ddc63aa9706d21c370571269689191b";
+$app=new Paymob($secret_key);
+$body=array( $payment_reference="14394788",
+             $amount="300"
+
+            );
+echo $app->payment_reference->refund('',$secret_key,$body);
+
+
+/*test capture function */
+
+$secret_key="skt_a67ba5b0a9cfb19e37a685f9216ebf456ddc63aa9706d21c370571269689191b";
+$app=new Paymob($secret_key);
+$body=array( $payment_reference="14394788",
+             $amount="300"
+
+            );
+echo $app->payment_reference->capture('',$secret_key,$body);
