@@ -1,23 +1,58 @@
 # Paymob PHP
 
-#Installation
+The Paymob PHP library provides convenient access to the Paymob API from
+applications written in the PHP language. It includes a pre-defined set of
+classes for API resources that initialize themselves dynamically from API
+responses which makes it compatible with a wide range of versions of the Paymob
+API.
 
-   `composer require paymob/paymob-php`
+## Requirements
+
+PHP 7.2.0 and later.
+
+## Composer
+
+You can install the bindings via [Composer](http://getcomposer.org/). Run the following command:
+
+```bash
+composer require paymob/paymob-php
+```
+
+To use the bindings, use Composer's [autoload](https://getcomposer.org/doc/01-basic-usage.md#autoloading):
+
+```php
+require_once('../vendor/autoload.php');
+```
+
+After installation run the command
+```bash
+ composer dump-autoload
+ ```
+  then
+  ```bash
+     composer update
+   ```
+
+## Dependencies
+
+The bindings require the following extensions in order to work properly:
+
+-   [`curl`](https://secure.php.net/manual/en/book.curl.php), although you can use your own non-cURL client if you prefer
+-   [`json`](https://secure.php.net/manual/en/book.json.php)
+-   [`mbstring`](https://secure.php.net/manual/en/book.mbstring.php) (Multibyte String)
+
+If you use Composer, these dependencies should be handled automatically
+
+## Getting Started
+
+Paymob usage looks like:
    
-   After installation run the command `composer dump-autoload` then `composer update` 
+### Creating an intention
 
-How to use sdk?
-
-  Example
-    creating an intention
-     Code:
-     
-     
-     require '../vendor/autoload.php';
-     use Paymob\Paymob;
-     $secret_key="your secret key in paymob account";
-     $app=new Paymob($secret_key);
-     $body=array(   $amount=1000,
+```php
+$secret_key="your secret key in paymob account";
+$app=new Paymob($secret_key);
+$body=array(   $amount=1000,
                     $currency="EGP",
                     $payment_methods=["card", "kiosk"],
                     $billing_data=[
@@ -37,4 +72,75 @@ How to use sdk?
                     ],
                     $delivery_needed=False,);
      echo $app->intent->create('',$secret_key,$body);
- 
+```
+
+
+
+### List Of Intentions
+```php
+    $secret_key="your secret key in paymob account";
+    $app=new Paymob($secret_key);
+    echo $app->intent->list('',$secret_key);
+```
+
+### Retrieve Intention
+```php
+    $secret_key="your secret key in paymob account";
+    $app=new Paymob($secret_key);
+    echo $app->intent->retrieve('',$secret_key);
+
+```
+
+### PaymentRefrencs Void
+```php
+    $secret_key="your secret key in paymob account";
+    $app=new Paymob($secret_key);
+    $body=array(    $payment_reference="14394788",
+                    );
+    echo $app->payment_reference->void('',$secret_key,$body);
+```
+
+### PaymentRefrencs Refund
+```php
+    $secret_key="your secret key in paymob account";
+    $app=new Paymob($secret_key);
+    $body=array( $payment_reference="14394788",
+                $amount="300"
+
+                );
+    echo $app->payment_reference->refund('',$secret_key,$body);
+```
+
+### PaymentRefrencs Capture
+```php
+    $secret_key="your secret key in paymob account";
+    $app=new Paymob($secret_key);
+    $body=array( $payment_reference="14394788",
+                $amount="300"
+
+                );
+    echo $app->payment_reference->capture('',$secret_key,$body);
+```
+## Legacy Version Support
+
+### PHP 7.2 and later
+
+If you are using PHP 7.2 or later, you should consider upgrading your environment as those versions have been past end of life since September 2017.
+
+## Development
+
+Get [Composer][composer]. For example, on Mac OS:
+
+```bash
+brew install composer
+```
+
+Install dependencies:
+
+```bash
+composer install
+```
+
+
+[composer]: https://getcomposer.org/
+

@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace Paymob;
 use Paymob\Accept\Intention;
 use Paymob\Accept\Customer;
+use Paymob\Accept\PaymentRefrence;
 
 class Paymob
 {
@@ -13,6 +14,7 @@ class Paymob
         $this->secret_key = $secret_key;
         $this->intent=new Intention();
         $this->customer=new Customer();
+        $this->payment_reference=new PaymentRefrence();
     }
     
     

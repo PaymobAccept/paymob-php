@@ -6,7 +6,7 @@
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'reference' => NULL,
-        'name' => 'paymob/paymob_next_sdk',
+        'name' => 'paymob/paymob-php',
         'dev' => true,
     ),
     'versions' => array(
@@ -18,10 +18,10 @@
             'aliases' => array(
                 0 => '2.x-dev',
             ),
-            'reference' => 'f2156cdd55f960432c332d4da1cd53c7fccf075f',
+            'reference' => '437e7a1c50044b92773b361af77620efb76fff59',
             'dev_requirement' => false,
         ),
-        'paymob/paymob_next_sdk' => array(
+        'paymob/paymob-php' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'type' => 'library',
@@ -43,6 +43,7 @@
             'dev_requirement' => false,
             'provided' => array(
                 0 => '1.0.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
     ),
