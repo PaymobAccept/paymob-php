@@ -1,8 +1,8 @@
 <?php 
 namespace Paymob\Accept;
-use \Paymob\Utils\HttpOperations;
+use \Paymob\Utils\PaymentOperations;
 class PaymentRefrence  {
-    use HttpOperations;
+    use PaymentOperations;
     private $resource = "PaymentRefrence";
 
     public function __construct($resource=null)
