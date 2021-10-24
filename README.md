@@ -80,7 +80,7 @@ $body=array(   $amount=1000,
 ```php
     $secret_key="your secret key in paymob account";
     $app=new Paymob($secret_key);
-    echo $app->intent->list('',$secret_key);
+    echo $app->intent->list('');
 ```
 
 ### Retrieve Intention
