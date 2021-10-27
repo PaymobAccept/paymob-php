@@ -71,7 +71,7 @@ $body=array(   $amount=1000,
                         "state"=> "Utah",
                     ],
                     $delivery_needed=False,);
-     echo $app->intent->create('',$secret_key,$body);
+     echo $app->intent->create('',$body);
 ```
 
 
@@ -80,14 +80,14 @@ $body=array(   $amount=1000,
 ```php
     $secret_key="your secret key in paymob account";
     $app=new Paymob($secret_key);
-    echo $app->intent->list('',$secret_key);
+    echo $app->intent->list('');
 ```
 
 ### Retrieve Intention
 ```php
     $secret_key="your secret key in paymob account";
     $app=new Paymob($secret_key);
-    echo $app->intent->retrieve('',$secret_key);
+    echo $app->intent->retrieve('');
 
 ```
 
@@ -97,7 +97,7 @@ $body=array(   $amount=1000,
     $app=new Paymob($secret_key);
     $body=array(    $payment_reference="14394788",
                     );
-    echo $app->payment_reference->void('',$secret_key,$body);
+    echo $app->payment_reference->void('',$body);
 ```
 
 ### PaymentRefrencs Refund
@@ -108,7 +108,7 @@ $body=array(   $amount=1000,
                 $amount="300"
 
                 );
-    echo $app->payment_reference->refund('',$secret_key,$body);
+    echo $app->payment_reference->refund('',$body);
 ```
 
 ### PaymentRefrencs Capture
@@ -119,7 +119,7 @@ $body=array(   $amount=1000,
                 $amount="300"
 
                 );
-    echo $app->payment_reference->capture('',$secret_key,$body);
+    echo $app->payment_reference->capture('',$body);
 ```
 ## Legacy Version Support
 
