@@ -50,7 +50,7 @@ Paymob usage looks like:
 ### Creating an intention
 
 ```php
-$secret_key="your secret key in paymob account";
+$secret_key="skl_***";
 $app=new Paymob($secret_key);
 $body=array(   $amount=1000,
                     $currency="EGP",
@@ -78,14 +78,14 @@ $body=array(   $amount=1000,
 
 ### List Of Intentions
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
     echo $app->intent->list('');
 ```
 
 ### Retrieve Intention
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
     echo $app->intent->retrieve('');
 
@@ -93,7 +93,7 @@ $body=array(   $amount=1000,
 
 ### PaymentRefrencs Void
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
     $body=array(    $payment_reference="14394788",
                     );
@@ -102,7 +102,7 @@ $body=array(   $amount=1000,
 
 ### PaymentRefrencs Refund
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
     $body=array( $payment_reference="14394788",
                 $amount="300"
@@ -113,7 +113,7 @@ $body=array(   $amount=1000,
 
 ### PaymentRefrencs Capture
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
     $body=array( $payment_reference="14394788",
                 $amount="300"
