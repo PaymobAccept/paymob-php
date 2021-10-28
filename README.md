@@ -50,76 +50,71 @@ Paymob usage looks like:
 ### Creating an intention
 
 ```php
-$secret_key="your secret key in paymob account";
+$secret_key="skl_***";
 $app=new Paymob($secret_key);
-$body=array(   $amount=1000,
-                    $currency="EGP",
-                    $payment_methods=["card", "kiosk"],
-                    $billing_data=[
-                        "apartment"=> "803",
-                        "email"=> "claudette09@exa.com",
-                        "floor"=> "42",
-                        "first_name"=> "Clifford",
-                        "street"=> "Ethan Land",
-                        "building"=> "8028",
-                        "phone_number"=> "+86(8)9135210487",
-                        "shipping_method"=> "PKG",
-                        "postal_code"=> "01898",
-                        "city"=> "Jaskolskiburgh",
-                        "country"=> "CR",
-                        "last_name"=> "Nicolas",
-                        "state"=> "Utah",
-                    ],
-                    $delivery_needed=False,);
-     echo $app->intent->create('',$secret_key,$body);
+$body=array($amount=1000,
+            $currency="EGP",
+            $payment_methods=["card", "kiosk"],
+            $billing_data=[
+                "apartment"=> "803",
+                "email"=> "claudette09@exa.com",
+                "floor"=> "42",
+                "first_name"=> "Clifford",
+                "street"=> "Ethan Land",
+                "building"=> "8028",
+                "phone_number"=> "+86(8)9135210487",
+                "shipping_method"=> "PKG",
+                "postal_code"=> "01898",
+                "city"=> "Jaskolskiburgh",
+                "country"=> "CR",
+                "last_name"=> "Nicolas",
+                "state"=> "Utah",
+            ],
+            $delivery_needed=False,);
+echo $app->intent->create('',$body);
 ```
 
 
 
 ### List Of Intentions
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
-    echo $app->intent->list('',$secret_key);
+    echo $app->intent->list('');
 ```
 
 ### Retrieve Intention
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
-    echo $app->intent->retrieve('',$secret_key);
+    echo $app->intent->retrieve('');
 
 ```
 
 ### PaymentRefrencs Void
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
-    $body=array(    $payment_reference="14394788",
-                    );
-    echo $app->payment_reference->void('',$secret_key,$body);
+    $body=array($payment_reference="14394788");               
+    echo $app->payment_reference->void('',$body);
 ```
 
 ### PaymentRefrencs Refund
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
-    $body=array( $payment_reference="14394788",
-                $amount="300"
-
-                );
-    echo $app->payment_reference->refund('',$secret_key,$body);
+    $body=array($payment_reference="14394788",
+                $amount="300");     
+    echo $app->payment_reference->refund('',$body);
 ```
 
 ### PaymentRefrencs Capture
 ```php
-    $secret_key="your secret key in paymob account";
+    $secret_key="skl_***";
     $app=new Paymob($secret_key);
-    $body=array( $payment_reference="14394788",
-                $amount="300"
-
-                );
-    echo $app->payment_reference->capture('',$secret_key,$body);
+    $body=array($payment_reference="14394788",
+                $amount="300");      
+    echo $app->payment_reference->capture('',$body);
 ```
 ## Legacy Version Support
 
