@@ -27,10 +27,9 @@ class HttpRequest
 
     public function api_base_url()
     {
-        //return: str api_next_url
-        // $api_next_url = "http://127.0.0.1:8000/api/next";
+         $api_next_url = $base_url."/api/next";
 
-        return $base_url;
+        return  $api_next_url;
     }
    
     public function resource_to_url($resource)
