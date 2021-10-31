@@ -4,7 +4,7 @@ use Paymob\Paymob;
 
 /*test create function */
 $secret_key="skt_a67ba5b0a9cfb19e37a685f9216ebf456ddc63aa9706d21c370571269689191b";
-$base_url="http://127.0.0.1:8000/api/next";
+$base_url="http://127.0.0.1:8000";
 $api_version="v1";
 $app=new Paymob($secret_key,$base_url,$$api_version);
 $body=array($amount=1000,
