@@ -8,10 +8,11 @@ use Monolog\Handler\StreamHandler;
 use MonologHandlerStreamHandler;
 class HttpRequest
 {
-    function __construct($secret_key=null, $resource=null,$api_version=null,$method=null)
+    function __construct($secret_key=null, $resource=null,$base_url=null,$api_version=null,$method=null)
     {
         $this->secret_key = $secret_key;
         $this->resource = $resource;
+        $this->base_url=$base_url;
         $this->api_version = $api_version;
         $this->method = $method;
         $this->logger = new Logger('next-paymob');
@@ -21,14 +22,14 @@ class HttpRequest
     {
         // Next API version handler.
         //return: str
-        return "v1";
+        return $api_version;
     }
 
     public function api_base_url()
     {
-        //return: str api_next_url
-        $api_next_url = "http://127.0.0.1:8000/api/next";
-        return $api_next_url;
+         $api_next_url = $base_url."/api/next";
+
+        return  $api_next_url;
     }
    
     public function resource_to_url($resource)
