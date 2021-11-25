@@ -6,11 +6,12 @@ classes for API resources that initialize themselves dynamically from API
 responses which makes it compatible with a wide range of versions of the Paymob
 API.
 
-## Requirements
+## Documentation
 
-PHP 7.2.0 and later.
+-   [`docs`](https://docs.paymob.com/docs)
 
-## Composer
+
+## Installation
 
 You can install the bindings via [Composer](http://getcomposer.org/). Run the following command:
 
@@ -32,22 +33,19 @@ After installation run the command
   ```bash
      composer update
    ```
+## Supported Languages
 
-## Dependencies
+### PHP 7.2 and later
 
-The bindings require the following extensions in order to work properly:
+If you are using PHP 7.2 or later, you should consider upgrading your environment as those versions have been past end of life since September 2017.
 
--   [`curl`](https://secure.php.net/manual/en/book.curl.php), although you can use your own non-cURL client if you prefer
--   [`json`](https://secure.php.net/manual/en/book.json.php)
--   [`mbstring`](https://secure.php.net/manual/en/book.mbstring.php) (Multibyte String)
+## Prerequest
 
-If you use Composer, these dependencies should be handled automatically
-
-## Getting Started
+## Sample Intention Creation 
 
 Paymob usage looks like:
    
-### Creating an intention
+### Creating an Intention
 
 ```php
 $secret_key="skl_***";
@@ -73,69 +71,9 @@ $body=array($amount=1000,
             $delivery_needed=False,);
 echo $app->intent->create('',$body);
 ```
-
-
-
 ### List Of Intentions
 ```php
     $secret_key="skl_***";
     $app=new Paymob($secret_key);
     echo $app->intent->list('');
 ```
-
-### Retrieve Intention
-```php
-    $secret_key="skl_***";
-    $app=new Paymob($secret_key);
-    echo $app->intent->retrieve('');
-
-```
-
-### PaymentRefrencs Void
-```php
-    $secret_key="skl_***";
-    $app=new Paymob($secret_key);
-    $body=array($payment_reference="14394788");               
-    echo $app->payment_reference->void('',$body);
-```
-
-### PaymentRefrencs Refund
-```php
-    $secret_key="skl_***";
-    $app=new Paymob($secret_key);
-    $body=array($payment_reference="14394788",
-                $amount="300");     
-    echo $app->payment_reference->refund('',$body);
-```
-
-### PaymentRefrencs Capture
-```php
-    $secret_key="skl_***";
-    $app=new Paymob($secret_key);
-    $body=array($payment_reference="14394788",
-                $amount="300");      
-    echo $app->payment_reference->capture('',$body);
-```
-## Legacy Version Support
-
-### PHP 7.2 and later
-
-If you are using PHP 7.2 or later, you should consider upgrading your environment as those versions have been past end of life since September 2017.
-
-## Development
-
-Get [Composer][composer]. For example, on Mac OS:
-
-```bash
-brew install composer
-```
-
-Install dependencies:
-
-```bash
-composer install
-```
-
-
-[composer]: https://getcomposer.org/
-
