@@ -91,7 +91,7 @@ echo $app->intent->create('',$body);
 
 ```
 
-### PaymentRefrencs Void
+### PaymentReferences Void
 ```php
     $secret_key="skl_***";
     $app=new Paymob($secret_key);
@@ -99,7 +99,7 @@ echo $app->intent->create('',$body);
     echo $app->payment_reference->void('',$body);
 ```
 
-### PaymentRefrencs Refund
+### PaymentReferences Refund
 ```php
     $secret_key="skl_***";
     $app=new Paymob($secret_key);
@@ -108,7 +108,7 @@ echo $app->intent->create('',$body);
     echo $app->payment_reference->refund('',$body);
 ```
 
-### PaymentRefrencs Capture
+### PaymentReferences Capture
 ```php
     $secret_key="skl_***";
     $app=new Paymob($secret_key);
